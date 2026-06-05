@@ -1,7 +1,7 @@
 // Central SEO config. Edit SITE_URL after first Vercel deploy if your final
 // domain differs (e.g. a custom domain). Everything else derives from here.
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://forgelab.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://forgelab.dev"
 ).replace(/\/$/, "");
 
 export const SITE_NAME = "FORGELAB";
