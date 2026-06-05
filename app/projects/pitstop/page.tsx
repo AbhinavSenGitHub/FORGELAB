@@ -92,9 +92,9 @@ export default function PitstopPage() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="flex flex-wrap items-center gap-4 mt-4"
               >
-                <button className="px-8 py-4 rounded-full bg-white text-slate-950 font-bold tracking-wide hover:bg-slate-200 transition-colors shadow-xl shadow-black/30">
+                <Link href="/#contact" className="px-8 py-4 rounded-full bg-white text-slate-950 font-bold tracking-wide hover:bg-slate-200 transition-colors shadow-xl shadow-black/30">
                   Get Started
-                </button>
+                </Link>
                 <button
                   onClick={() => setIsVideoOpen(true)}
                   className="px-8 py-4 rounded-full bg-white/[0.04] text-white font-bold tracking-wide hover:bg-white/[0.08] transition-colors flex items-center gap-3 border border-white/10"
@@ -352,9 +352,9 @@ export default function PitstopPage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-full max-w-4xl bg-gradient-to-b from-rose-500/20 to-transparent blur-[150px] rounded-full pointer-events-none" />
         <div className="relative z-10">
           <h2 className="font-display text-5xl md:text-7xl font-bold text-white tracking-tighter mb-8">Ready to revolutionize <br/> vehicle care?</h2>
-          <button className="px-10 py-5 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-white font-bold text-lg hover:brightness-110 transition-all shadow-[0_8px_30px_-8px_rgba(244,63,94,0.6)]">
+          <Link href="/#contact" className="inline-block px-10 py-5 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-white font-bold text-lg hover:brightness-110 transition-all shadow-[0_8px_30px_-8px_rgba(244,63,94,0.6)]">
             Start Your Project
-          </button>
+          </Link>
           <p className="mt-12 text-sm font-mono font-bold tracking-widest uppercase text-slate-500 flex items-center justify-center gap-2.5">
             <span className="w-2 h-2 rounded-full ember-bead bg-gradient-to-br from-amber-300 via-orange-500 to-rose-500" />
             Forged by FORGELAB°
