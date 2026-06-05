@@ -44,7 +44,6 @@ type Project = {
   demo: string;
   color: string;
   video?: string;
-  youtube?: string;
   preview?: string;
   isMobile?: boolean;
   images?: string[];
@@ -451,19 +450,7 @@ function ProjectCard({ project, idx }: { project: Project; idx: number }) {
                   <video ref={videoRef} src={project.video} loop muted playsInline preload="metadata"
                     style={{ opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease', position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: project.fit === 'contain' ? 'contain' : 'cover', zIndex: 20 }} />
                 )}
-                {project.youtube && hovered && (
-                  <div style={{ position: 'absolute', inset: 0, zIndex: 20, overflow: 'hidden' }}>
-                    <iframe
-                      title={`${project.title} demo`}
-                      src={`https://www.youtube-nocookie.com/embed/${project.youtube}?autoplay=1&mute=1&loop=1&playlist=${project.youtube}&controls=0&modestbranding=1&rel=0&playsinline=1&disablekb=1&fs=0&iv_load_policy=3&showinfo=0`}
-                      allow="autoplay; encrypted-media; picture-in-picture"
-                      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0, pointerEvents: 'none' }}
-                    />
-                    {/* Shield: absorbs all pointer events so YouTube never shows its hover controls/logo overlay */}
-                    <div style={{ position: 'absolute', inset: 0, zIndex: 21 }} />
-                  </div>
-                )}
-                <div style={{ opacity: hovered && (project.video || project.youtube) ? 0 : 1, transition: 'opacity 0.5s ease', position: 'absolute', inset: 0 }}>
+                <div style={{ opacity: hovered && project.video ? 0 : 1, transition: 'opacity 0.5s ease', position: 'absolute', inset: 0 }}>
                   {project.render === 'kensho' ? (
                     <KenshoMockup />
                   ) : project.preview ? (
@@ -554,7 +541,7 @@ const PROJECTS = [
     tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS"],
     demo: "onelogica.com",
     color: "from-emerald-500 to-teal-400",
-    youtube: "uvWA9x1fD0Y",
+    video: "/onelogica.mp4",
     preview: "/onelogica-preview.png",
     fit: "responsive" as const
   },
