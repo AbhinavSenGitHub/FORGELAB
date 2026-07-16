@@ -4,7 +4,7 @@ import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight, Mail, LayoutTemplate, Smartphone, Database, X, Loader2, CheckCircle2, Code2 } from "lucide-react";
+import { ArrowUpRight, Mail, LayoutTemplate, Smartphone, Database, X, Loader2, CheckCircle2, Code2, Quote } from "lucide-react";
 
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -911,6 +911,108 @@ Got an idea? <span className="text-white font-bold">We make it real — fast.</s
 
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* CLIENT REVIEW — SYNCUP */}
+        <section id="review" className="px-6 md:px-12 py-32 relative z-10 max-w-[1600px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <span className="text-[var(--ember)] font-mono font-bold text-sm tracking-widest uppercase">/ Client Review</span>
+            <h2 className="mt-3 text-5xl md:text-7xl font-display font-bold tracking-tighter text-white">What clients say</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            {/* Testimonial card */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-7 relative bg-white/[0.03] border border-white/10 rounded-[2.5rem] p-10 md:p-14 overflow-hidden"
+            >
+              <div className="absolute -top-20 -right-16 w-64 h-64 rounded-full bg-[var(--ember)]/15 blur-[90px] pointer-events-none" />
+              <Quote className="w-12 h-12 text-[var(--ember)] mb-8 opacity-80" />
+              <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-medium relative z-10">
+                &ldquo;Abhinav is genuinely one of the strongest tech talents. He consistently goes a step beyond what&apos;s
+                asked, tackling problems that seem impossible without ever saying no upfront — he&apos;ll dig in and find a
+                way through. On top of that, he&apos;s reliable on timelines, consistently delivering results on time.
+                Overall, an amazing person to have on the team.&rdquo;
+              </p>
+              <div className="mt-10 flex items-center gap-5 relative z-10">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden ring-2 ring-[var(--ember)]/50 shrink-0">
+                  <Image src="/ayush-syncup.jpg" alt="Ayush — SyncUp" fill className="object-cover" sizes="64px" />
+                </div>
+                <div>
+                  <a
+                    href="https://www.linkedin.com/in/ayush-patel-699987192/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-white font-display font-bold text-xl tracking-tight hover:text-[var(--ember)] transition-colors inline-flex items-center gap-2"
+                  >
+                    Ayush Patel <LinkedinIcon className="w-4 h-4 text-slate-400" />
+                  </a>
+                  <a
+                    href="https://www.syncup.in/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block text-slate-400 font-mono text-sm font-bold tracking-wide hover:text-[var(--ember)] transition-colors"
+                  >
+                    SyncUp · syncup.in
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Delivered projects */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-5 flex flex-col gap-4"
+            >
+              <p className="text-slate-500 font-mono font-bold text-xs tracking-widest uppercase mb-2">Delivered for SyncUp</p>
+              {[
+                {
+                  title: "Job Search Platform",
+                  desc: "Full-stack job search aggregator — Next.js frontend with an Express API.",
+                  tech: "Next.js · Express · TypeScript",
+                },
+                {
+                  title: "SingleHire API",
+                  desc: "Production-ready backend integrating the SignalHire API with lead de-duplication and search audit history.",
+                  tech: "Node.js · Express · MongoDB",
+                },
+                {
+                  title: "Co-pilot",
+                  desc: "Automation service syncing Google Sheets data with scheduled jobs and email notifications.",
+                  tech: "TypeScript · Google APIs · Cron",
+                },
+                {
+                  title: "Job Poster Extension",
+                  desc: "Chrome extension automating multi-step job posting on LinkedIn and Naukri with one click.",
+                  tech: "Chrome MV3 · JavaScript",
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="group bg-white/[0.03] border border-white/10 hover:border-[var(--ember)]/40 rounded-3xl p-6 transition-colors"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="text-white font-display font-bold text-lg tracking-tight">{item.title}</h3>
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+                  </div>
+                  <p className="text-slate-400 text-sm font-medium leading-relaxed mb-3">{item.desc}</p>
+                  <p className="text-slate-500 font-mono text-xs font-bold tracking-wide">{item.tech}</p>
+                </div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
