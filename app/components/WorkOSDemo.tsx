@@ -10,8 +10,28 @@ import React, { useEffect, useRef, useState } from "react";
  */
 export default function WorkOSDemo() {
   const frame = useRef<HTMLIFrameElement>(null);
+  const box = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(620);
   const [loaded, setLoaded] = useState(false);
+  // The demo is a whole app: load it only when the visitor scrolls near it,
+  // so it never slows down the first view of the page.
+  const [near, setNear] = useState(false);
+
+  useEffect(() => {
+    const el = box.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setNear(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "400px 0px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const onMessage = (e: MessageEvent) => {
@@ -26,19 +46,20 @@ export default function WorkOSDemo() {
   }, []);
 
   return (
-    <div className="relative w-full" style={{ height }}>
+    <div ref={box} className="relative w-full" style={{ height }}>
       {!loaded && (
         <div className="absolute inset-0 rounded-[28px] border border-emerald-400/20 bg-[#050806] animate-pulse" aria-hidden="true" />
       )}
-      <iframe
-        ref={frame}
-        src="/workos/embed/demo"
-        title="WorkOS interactive demo"
-        loading="lazy"
-        onLoad={() => setLoaded(true)}
-        className="w-full h-full border-0 bg-transparent"
-        style={{ colorScheme: "dark", opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
-      />
+      {near && (
+        <iframe
+          ref={frame}
+          src="/workos/embed/demo"
+          title="WorkOS interactive demo"
+          onLoad={() => setLoaded(true)}
+          className="w-full h-full border-0 bg-transparent"
+          style={{ colorScheme: "dark", opacity: loaded ? 1 : 0, transition: "opacity 0.4s ease" }}
+        />
+      )}
     </div>
   );
 }

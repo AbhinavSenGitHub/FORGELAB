@@ -779,9 +779,11 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-[1600px] mx-auto w-full">
             {/* Left Content */}
+            {/* Slides up but stays visible: hidden text (opacity 0 until the
+                JS loads) made the page's main text paint ~3.5 s late on phones. */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 24 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
               className="max-w-3xl"
             >
