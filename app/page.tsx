@@ -965,7 +965,7 @@ I&apos;m <span className="text-white font-bold">Abhinav Sen</span>, a full-stack
               </p>
               <div className="flex flex-wrap items-center gap-6">
                 <a
-                  href="/workos/download"
+                  href="/workos"
                   className="px-7 py-4 bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 rounded-full font-bold text-lg flex items-center gap-3 hover:brightness-110 transition-all active:scale-95"
                 >
                   <Download className="w-5 h-5" /> Download for Windows
