@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import WorkOSDemo from "./components/WorkOSDemo";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight, Mail, LayoutTemplate, Smartphone, Database, X, Loader2, CheckCircle2, Code2, Quote, Download, Monitor } from "lucide-react";
 
@@ -934,19 +935,9 @@ I&apos;m <span className="text-white font-bold">Abhinav Sen</span>, a full-stack
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
           >
-            <a
-              href="/workos"
-              className="group lg:col-span-7 block rounded-[2.5rem] overflow-hidden ring-1 ring-emerald-400/20 shadow-[0_30px_80px_-30px_rgba(52,211,153,0.35)] bg-[#060a08]"
-            >
-              <Image
-                src="/workos-preview.png"
-                alt="WorkOS — your computer, organized around your work"
-                width={1200}
-                height={630}
-                sizes="(max-width: 1024px) 100vw, 58vw"
-                className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
-              />
-            </a>
+            <div className="lg:col-span-7">
+              <WorkOSDemo />
+            </div>
 
             <div className="lg:col-span-5 flex flex-col gap-8 lg:px-6">
               <div className="flex items-center gap-4 text-sm font-bold text-slate-500 tracking-widest uppercase font-mono">
@@ -974,7 +965,7 @@ I&apos;m <span className="text-white font-bold">Abhinav Sen</span>, a full-stack
               </p>
               <div className="flex flex-wrap items-center gap-6">
                 <a
-                  href="/workos/api/download"
+                  href="/workos/download"
                   className="px-7 py-4 bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 rounded-full font-bold text-lg flex items-center gap-3 hover:brightness-110 transition-all active:scale-95"
                 >
                   <Download className="w-5 h-5" /> Download for Windows
