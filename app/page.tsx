@@ -447,7 +447,7 @@ function ProjectCard({ project, idx }: { project: Project; idx: number }) {
               </div>
               <div className="flex-1 relative overflow-hidden bg-[#0a0a0a]">
                 {project.video && (
-                  <video ref={videoRef} src={project.video} loop muted playsInline preload="metadata"
+                  <video ref={videoRef} src={project.video} loop muted playsInline preload="none"
                     style={{ opacity: hovered ? 1 : 0, transition: 'opacity 0.5s ease', position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: project.fit === 'contain' ? 'contain' : 'cover', zIndex: 20 }} />
                 )}
                 <div style={{ opacity: hovered && project.video ? 0 : 1, transition: 'opacity 0.5s ease', position: 'absolute', inset: 0 }}>

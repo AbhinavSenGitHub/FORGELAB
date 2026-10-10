@@ -6,9 +6,10 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/api/",
+      disallow: ["/api/", "/workos/api/", "/workos/embed/"],
     },
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    // This site's pages, and WorkOS's (served under /workos).
+    sitemap: [`${SITE_URL}/sitemap.xml`, `${SITE_URL}/workos/sitemap.xml`],
     host: SITE_URL,
   };
 }
