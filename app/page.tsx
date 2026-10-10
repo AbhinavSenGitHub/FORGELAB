@@ -809,7 +809,7 @@ export default function Home() {
               </h1>
 
               <p className="mt-10 text-xl md:text-2xl text-slate-400 max-w-2xl font-medium leading-relaxed">
-I&apos;m <span className="text-white font-bold">Abhinav Sen</span>, a full-stack developer. I design, build and ship <span className="text-white font-bold">web</span>, <span className="text-white font-bold">mobile</span> &amp; <span className="text-white font-bold">desktop</span> apps in <span className="text-white font-bold">React Native</span>, <span className="text-white font-bold">Next.js</span> and <span className="text-white font-bold">Rust</span> — and I&apos;m building my own SaaS, <a href="/workos" className="text-white font-bold underline decoration-[var(--ember)]/60 underline-offset-4 hover:text-[var(--ember)] transition-colors">WorkOS</a>.
+I&apos;m <span className="text-white font-bold">Abhinav Sen</span>, a full-stack developer. I design, build and ship <span className="text-white font-bold">web</span>, <span className="text-white font-bold">mobile</span> &amp; <span className="text-white font-bold">desktop</span> apps in <span className="text-white font-bold">React Native</span> and <span className="text-white font-bold">Next.js</span> — and I&apos;m building my own SaaS, <a href="/workos" className="text-white font-bold underline decoration-[var(--ember)]/60 underline-offset-4 hover:text-[var(--ember)] transition-colors">WorkOS</a>.
               </p>
 
               <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -956,7 +956,7 @@ I&apos;m <span className="text-white font-bold">Abhinav Sen</span>, a full-stack
                 history, notes, screenshots, downloads, music and Claude Code usage one glance away.
               </p>
               <div className="flex flex-wrap gap-3">
-                {["Rust", "Tauri", "React", "TypeScript", "SQLite", "Win32 API"].map((t) => (
+                {["Tauri", "React", "TypeScript", "SQLite", "Win32 API"].map((t) => (
                   <span key={t} className="px-4 py-2 rounded-full border border-white/10 bg-white/[0.04] text-xs font-bold text-slate-300">
                     {t}
                   </span>
@@ -1210,7 +1210,7 @@ I&apos;m <span className="text-white font-bold">Abhinav Sen</span>, a full-stack
                   <p className="text-slate-400 font-medium text-lg leading-relaxed">Fast, native Windows apps with a web UI — signed installers and silent auto-updates.</p>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-auto">
-                  {['Rust', 'Tauri', 'Win32 API', 'SQLite', 'Auto-update'].map(t => (
+                  {['Tauri', 'Win32 API', 'SQLite', 'Auto-update'].map(t => (
                     <span key={t} className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm font-bold text-slate-300">{t}</span>
                   ))}
                 </div>

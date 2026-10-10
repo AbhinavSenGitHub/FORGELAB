@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s — Abhinav Sen",
   },
   description:
-    "Abhinav Sen is a full-stack developer building premium web, mobile and desktop apps — React Native, Next.js, Rust and AI-driven products — and the maker of WorkOS.",
+    "Abhinav Sen is a full-stack developer building premium web, mobile and desktop apps — React Native, Next.js and AI-driven products — and the maker of WorkOS.",
   keywords: [
     "Abhinav Sen",
     "full-stack developer",

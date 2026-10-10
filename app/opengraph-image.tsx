@@ -35,7 +35,7 @@ export default function Image() {
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 26, color: "#94a3b8" }}>
-          Web · Mobile · Desktop — React Native, Next.js, Rust · Maker of WorkOS
+          Web · Mobile · Desktop — React Native, Next.js · Maker of WorkOS
         </div>
       </div>
     ),
