@@ -4,7 +4,7 @@ import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { ArrowUpRight, Mail, LayoutTemplate, Smartphone, Database, X, Loader2, CheckCircle2, Code2, Quote } from "lucide-react";
+import { ArrowUpRight, Mail, LayoutTemplate, Smartphone, Database, X, Loader2, CheckCircle2, Code2, Quote, Download, Monitor } from "lucide-react";
 
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -18,7 +18,7 @@ const LinkedinIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-/* ─── FORGELAB brand mark — molten ember bead + wordmark ─── */
+/* ─── Abhinav Sen — ember bead + name wordmark ─── */
 function BrandMark({ size = "md" }: { size?: "sm" | "md" }) {
   const text = size === "sm" ? "text-lg" : "text-2xl";
   const bead = size === "sm" ? "w-2.5 h-2.5" : "w-3 h-3";
@@ -28,8 +28,7 @@ function BrandMark({ size = "md" }: { size?: "sm" | "md" }) {
         className={`${bead} rounded-full ember-bead bg-gradient-to-br from-amber-300 via-orange-500 to-rose-500 group-hover:scale-110 transition-transform`}
       />
       <span className={`${text} font-display font-bold tracking-tight text-white`}>
-        FORGE<span className="text-ember-gradient">LAB</span>
-        <sup className="text-ember-gradient text-[0.6em] font-bold">°</sup>
+        Abhinav<span className="text-ember-gradient"> Sen</span>
       </span>
     </span>
   );
@@ -663,7 +662,7 @@ function ContactModal({ open, onClose }: { open: boolean; onClose: () => void })
                 <CheckCircle2 className="w-16 h-16 text-emerald-400" />
                 <h3 className="text-3xl font-display font-bold tracking-tight">Message sent!</h3>
                 <p className="text-slate-400 font-medium">
-                  Thanks for reaching out — we&apos;ll get back to you soon.
+                  Thanks for reaching out — I&apos;ll get back to you soon.
                 </p>
                 <button
                   onClick={onClose}
@@ -675,9 +674,9 @@ function ContactModal({ open, onClose }: { open: boolean; onClose: () => void })
             ) : (
               <div className="relative z-10">
                 <div className="mb-5"><BrandMark size="sm" /></div>
-                <h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-2">Start a project</h3>
+                <h3 className="text-3xl md:text-4xl font-display font-bold tracking-tighter mb-2">Let&apos;s talk</h3>
                 <p className="text-slate-400 font-medium mb-7">
-                  Drop your email and a message — it lands straight in our inbox. get instent revert back. Or connect with our experts instantly — call us at +91 7842013134.
+                  Drop your email and a message — it lands straight in my inbox, and I usually reply within a day. Or call me at +91 7842013134.
                 </p>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -700,7 +699,7 @@ function ContactModal({ open, onClose }: { open: boolean; onClose: () => void })
                   <textarea
                     required
                     rows={5}
-                    placeholder="Tell us about your project..."
+                    placeholder="Tell me about your project or role..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     className="w-full px-5 py-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder:text-slate-500 font-medium resize-none focus:outline-none focus:border-[var(--ember)]/60 focus:bg-white/[0.07] transition-colors"
@@ -762,10 +761,11 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 md:px-12 backdrop-blur-xl bg-[#0a0a0b]/70 border-b border-white/[0.06]">
         <a href="#top" className="hover:scale-105 transition-transform"><BrandMark /></a>
         <div className="hidden md:flex items-center gap-8 text-sm font-bold text-slate-400 font-mono tracking-wide">
+          <a href="#saas" className="hover:text-white transition-colors">SAAS</a>
           <a href="#work" className="hover:text-white transition-colors">WORK</a>
-          <a href="#skills" className="hover:text-white transition-colors">CAPABILITIES</a>
+          <a href="#skills" className="hover:text-white transition-colors">SKILLS</a>
           <button onClick={() => setContactOpen(true)} className="px-6 py-3 bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 text-white rounded-full hover:brightness-110 transition-all flex items-center gap-2 hover:shadow-[0_8px_30px_-8px_rgba(255,106,61,0.6)] hover:-translate-y-0.5 active:scale-95 font-sans">
-            Start a Project <ArrowUpRight className="w-4 h-4" />
+            Get in touch <ArrowUpRight className="w-4 h-4" />
           </button>
         </div>
       </nav>
@@ -794,11 +794,11 @@ export default function Home() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
                 </span>
-                Studio open for new work
+                Open to freelance &amp; full-time work
               </motion.div>
 
               <h1 className="text-[13vw] sm:text-[10vw] md:text-[8rem] lg:text-[7rem] xl:text-[8.5rem] leading-[0.85] font-extrabold tracking-tighter text-white drop-shadow-sm">
-                We forge <br />
+                I build <br />
                 <span className="text-ember-gradient">
                   premium
                 </span> <br />
@@ -806,12 +806,12 @@ export default function Home() {
               </h1>
 
               <p className="mt-10 text-xl md:text-2xl text-slate-400 max-w-2xl font-medium leading-relaxed">
-Got an idea? <span className="text-white font-bold">We make it real — fast.</span> FORGELAB designs, builds, and ships your <span className="text-white font-bold">web</span> & <span className="text-white font-bold">mobile</span> app in <span className="text-white font-bold">React Native</span> and <span className="text-white font-bold">Next.js</span> — premium, AI-ready products that wow clients and scale effortlessly.
+I&apos;m <span className="text-white font-bold">Abhinav Sen</span>, a full-stack developer. I design, build and ship <span className="text-white font-bold">web</span>, <span className="text-white font-bold">mobile</span> &amp; <span className="text-white font-bold">desktop</span> apps in <span className="text-white font-bold">React Native</span>, <span className="text-white font-bold">Next.js</span> and <span className="text-white font-bold">Rust</span> — and I&apos;m building my own SaaS, <a href="/workos" className="text-white font-bold underline decoration-[var(--ember)]/60 underline-offset-4 hover:text-[var(--ember)] transition-colors">WorkOS</a>.
               </p>
 
               <div className="mt-10 flex flex-wrap items-center gap-4">
                 <button onClick={() => setContactOpen(true)} className="px-8 py-4 bg-white text-slate-950 rounded-full font-bold text-lg flex items-center gap-3 hover:bg-slate-200 transition-colors active:scale-95">
-                  Start a Project <ArrowUpRight className="w-5 h-5" />
+                  Get in touch <ArrowUpRight className="w-5 h-5" />
                 </button>
                 <a href="#work" className="px-8 py-4 rounded-full font-bold text-lg text-white border border-white/15 hover:border-[var(--ember)]/60 hover:text-[var(--ember)] transition-colors">
                   View Work
@@ -881,7 +881,7 @@ Got an idea? <span className="text-white font-bold">We make it real — fast.</s
                   <div className="flex justify-between items-center mb-6">
                     <div className="flex items-center gap-2.5">
                       <span className="w-2.5 h-2.5 rounded-full ember-bead bg-gradient-to-br from-amber-300 via-orange-500 to-rose-500" />
-                      <span className="text-xs font-bold text-slate-300 uppercase tracking-widest font-mono">Services</span>
+                      <span className="text-xs font-bold text-slate-300 uppercase tracking-widest font-mono">I build</span>
                     </div>
                     <Code2 className="w-5 h-5 text-slate-500" />
                   </div>
@@ -905,13 +905,90 @@ Got an idea? <span className="text-white font-bold">We make it real — fast.</s
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                       <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                     </span>
-                    Studio · Online
+                    Available · Online
                   </div>
                 </motion.div>
 
               </div>
             </div>
           </div>
+        </section>
+
+        {/* MY SAAS — WORKOS */}
+        <section id="saas" className="px-6 md:px-12 pt-32 relative z-10 max-w-[1600px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <span className="text-[var(--ember)] font-mono font-bold text-sm tracking-widest uppercase">/ My SaaS</span>
+            <h2 className="mt-3 text-5xl md:text-7xl font-display font-bold tracking-tighter text-white">WorkOS</h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+          >
+            <a
+              href="/workos"
+              className="group lg:col-span-7 block rounded-[2.5rem] overflow-hidden ring-1 ring-emerald-400/20 shadow-[0_30px_80px_-30px_rgba(52,211,153,0.35)] bg-[#060a08]"
+            >
+              <Image
+                src="/workos-preview.png"
+                alt="WorkOS — your computer, organized around your work"
+                width={1200}
+                height={630}
+                sizes="(max-width: 1024px) 100vw, 58vw"
+                className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
+              />
+            </a>
+
+            <div className="lg:col-span-5 flex flex-col gap-8 lg:px-6">
+              <div className="flex items-center gap-4 text-sm font-bold text-slate-500 tracking-widest uppercase font-mono">
+                <span>2026</span>
+                <span className="w-12 h-px bg-white/15" />
+                <span className="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">Desktop SaaS · Windows</span>
+              </div>
+              <p className="text-2xl md:text-3xl font-display font-bold tracking-tight text-white leading-snug">
+                Your computer, organized around your work.
+              </p>
+              <p className="text-xl text-slate-400 leading-relaxed font-medium">
+                A workspace manager for developers. Each project gets its own workspace — apps, folders, terminals and browser
+                tabs — and switching hides the rest instead of closing it. A small notch at the top of the screen keeps clipboard
+                history, notes, screenshots, downloads, music and Claude Code usage one glance away.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {["Rust", "Tauri", "React", "TypeScript", "SQLite", "Win32 API"].map((t) => (
+                  <span key={t} className="px-4 py-2 rounded-full border border-white/10 bg-white/[0.04] text-xs font-bold text-slate-300">
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <p className="text-slate-500 font-mono text-sm font-bold tracking-wide">
+                Free for 30 days · then $6/month, $48/year or $99 lifetime · auto-updates
+              </p>
+              <div className="flex flex-wrap items-center gap-6">
+                <a
+                  href="/workos/api/download"
+                  className="px-7 py-4 bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 rounded-full font-bold text-lg flex items-center gap-3 hover:brightness-110 transition-all active:scale-95"
+                >
+                  <Download className="w-5 h-5" /> Download for Windows
+                </a>
+                <a
+                  href="/workos"
+                  className="inline-flex items-center gap-3 text-xl font-bold text-white hover:text-emerald-300 transition-colors group/link"
+                >
+                  Explore WorkOS
+                  <ArrowUpRight className="w-6 h-6 transform group-hover/link:translate-x-1.5 group-hover/link:-translate-y-1.5 transition-transform" />
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </section>
 
         {/* CLIENT REVIEW — SYNCUP */}
@@ -1026,7 +1103,7 @@ Got an idea? <span className="text-white font-bold">We make it real — fast.</s
           >
             <div>
               <span className="text-[var(--ember)] font-mono font-bold text-sm tracking-widest uppercase">/ Selected Builds</span>
-              <h2 className="mt-3 text-5xl md:text-7xl font-display font-bold tracking-tighter text-white">Work from the forge</h2>
+              <h2 className="mt-3 text-5xl md:text-7xl font-display font-bold tracking-tighter text-white">Things I&apos;ve built</h2>
             </div>
             <p className="text-slate-500 font-mono font-bold hidden md:block tracking-widest text-lg">01 — 06</p>
           </motion.div>
@@ -1048,12 +1125,12 @@ Got an idea? <span className="text-white font-bold">We make it real — fast.</s
               transition={{ duration: 0.6 }}
               className="text-center mb-20"
             >
-              <span className="text-[var(--ember)] font-mono font-bold text-sm tracking-widest uppercase">/ Capabilities</span>
-              <h2 className="mt-3 text-5xl md:text-6xl font-display font-bold tracking-tighter text-white mb-6">What we forge</h2>
-              <p className="text-xl text-slate-400 font-medium max-w-2xl mx-auto">The core technologies and frameworks the studio uses to engineer premium digital products.</p>
+              <span className="text-[var(--ember)] font-mono font-bold text-sm tracking-widest uppercase">/ Skills</span>
+              <h2 className="mt-3 text-5xl md:text-6xl font-display font-bold tracking-tighter text-white mb-6">What I work with</h2>
+              <p className="text-xl text-slate-400 font-medium max-w-2xl mx-auto">The technologies and frameworks I use to build premium digital products, end to end.</p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Frontend Card */}
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -1122,6 +1199,29 @@ Got an idea? <span className="text-white font-bold">We make it real — fast.</s
                   ))}
                 </div>
               </motion.div>
+
+              {/* Desktop Apps */}
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group bg-white/[0.03] p-10 rounded-[2rem] border border-white/10 hover:border-amber-400/40 flex flex-col gap-8 transition-all"
+              >
+                <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-amber-300 group-hover:scale-110 transition-transform">
+                  <Monitor className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-display font-bold mb-4 tracking-tight text-white">Desktop Apps</h3>
+                  <p className="text-slate-400 font-medium text-lg leading-relaxed">Fast, native Windows apps with a web UI — signed installers and silent auto-updates.</p>
+                </div>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {['Rust', 'Tauri', 'Win32 API', 'SQLite', 'Auto-update'].map(t => (
+                    <span key={t} className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm font-bold text-slate-300">{t}</span>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -1142,10 +1242,10 @@ Got an idea? <span className="text-white font-bold">We make it real — fast.</s
             transition={{ duration: 0.8 }}
             className="font-display text-[15vw] md:text-[10rem] font-bold tracking-tighter leading-[0.85] mb-12"
           >
-            Forge with <span className="text-ember-gradient">us.</span>
+            Let&apos;s work <span className="text-ember-gradient">together.</span>
           </motion.h2>
           <p className="text-xl md:text-2xl text-slate-400 max-w-2xl mb-16 font-medium leading-relaxed">
-            FORGELAB is open for freelance projects and new partnerships. Tell us what you&apos;re building — let&apos;s ship something extraordinary.
+            I&apos;m open to freelance projects and full-time roles. Tell me what you&apos;re building — let&apos;s ship something extraordinary.
           </p>
 
           <motion.button
@@ -1154,7 +1254,7 @@ Got an idea? <span className="text-white font-bold">We make it real — fast.</s
             onClick={() => setContactOpen(true)}
             className="px-12 py-6 bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 text-white rounded-full font-bold text-2xl flex items-center gap-4 shadow-[0_0_80px_rgba(255,106,61,0.3)] hover:shadow-[0_0_100px_rgba(255,106,61,0.5)] transition-shadow"
           >
-            <Mail className="w-8 h-8" /> Start a Project
+            <Mail className="w-8 h-8" /> Get in touch
           </motion.button>
 
           <div className="w-full h-px bg-white/10 mt-40 mb-10" />

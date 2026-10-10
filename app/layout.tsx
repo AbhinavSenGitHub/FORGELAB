@@ -16,14 +16,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "FORGELAB° — Premium Digital Engineering",
-    template: "%s — FORGELAB°",
+    default: "Abhinav Sen — Full-Stack Developer",
+    template: "%s — Abhinav Sen",
   },
   description:
-    "FORGELAB is a digital engineering studio forging premium web & mobile experiences — React Native, Next.js, and AI-driven products built for scale.",
+    "Abhinav Sen is a full-stack developer building premium web, mobile and desktop apps — React Native, Next.js, Rust and AI-driven products — and the maker of WorkOS.",
   keywords: [
-    "FORGELAB",
-    "digital engineering studio",
+    "Abhinav Sen",
+    "full-stack developer",
+    "portfolio",
     "React Native",
     "Next.js",
     "full-stack development",
@@ -31,9 +32,9 @@ export const metadata: Metadata = {
     // Product names — so a product-name search resolves to this site.
     ...PROJECTS_SEO.map((p) => p.name),
   ],
-  authors: [{ name: "FORGELAB" }],
-  creator: "FORGELAB",
-  publisher: "FORGELAB",
+  authors: [{ name: "Abhinav Sen" }],
+  creator: "Abhinav Sen",
+  publisher: "Abhinav Sen",
   alternates: {
     canonical: "/",
   },
@@ -49,17 +50,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "FORGELAB° — Premium Digital Engineering",
-    description: "We forge premium digital experiences, engineered for scale.",
+    title: "Abhinav Sen — Full-Stack Developer",
+    description: "I build premium web, mobile and desktop products — and WorkOS, my own SaaS.",
     url: SITE_URL,
-    siteName: "FORGELAB",
+    siteName: "Abhinav Sen",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FORGELAB° — Premium Digital Engineering",
-    description: "We forge premium digital experiences, engineered for scale.",
+    title: "Abhinav Sen — Full-Stack Developer",
+    description: "I build premium web, mobile and desktop products — and WorkOS, my own SaaS.",
   },
 };
 
@@ -69,23 +70,23 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      "@id": `${SITE_URL}/#organization`,
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
       name: SITE_NAME,
       url: SITE_URL,
-      description:
-        "Digital engineering studio forging premium web & mobile experiences.",
+      jobTitle: "Full-Stack Developer",
+      sameAs: ["https://github.com/AbhinavSenGitHub", "https://www.linkedin.com/in/abhinav-sen-975a9b222/"],
     },
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: SITE_NAME,
-      publisher: { "@id": `${SITE_URL}/#organization` },
+      publisher: { "@id": `${SITE_URL}/#person` },
     },
     {
       "@type": "ItemList",
-      name: "FORGELAB Projects",
+      name: "Projects by Abhinav Sen",
       itemListElement: PROJECTS_SEO.map((p, i) => ({
         "@type": "ListItem",
         position: i + 1,
@@ -95,7 +96,7 @@ const jsonLd = {
           alternateName: p.subtitle,
           description: p.description,
           url: p.url,
-          creator: { "@id": `${SITE_URL}/#organization` },
+          creator: { "@id": `${SITE_URL}/#person` },
         },
       })),
     },

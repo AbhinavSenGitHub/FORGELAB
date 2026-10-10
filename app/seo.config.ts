@@ -1,14 +1,21 @@
 // Central SEO config. Edit SITE_URL after first Vercel deploy if your final
 // domain differs (e.g. a custom domain). Everything else derives from here.
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://forgelab.dev"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.abhinavsen.com"
 ).replace(/\/$/, "");
 
-export const SITE_NAME = "FORGELAB";
+export const SITE_NAME = "Abhinav Sen";
 
 // Projects/products surfaced to search engines. Keep names + descriptions in
 // sync with the showcase in app/page.tsx so a product-name search resolves here.
 export const PROJECTS_SEO = [
+  {
+    name: "WorkOS",
+    subtitle: "Desktop workspace manager (SaaS)",
+    description:
+      "Windows workspace manager for developers: a workspace per project, switching without closing apps, and clipboard, notes, screenshots and downloads in a notch at the top of the screen.",
+    url: `${SITE_URL}/workos`,
+  },
   {
     name: "PitStop",
     subtitle: "AI Car Service App",

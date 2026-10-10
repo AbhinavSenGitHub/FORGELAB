@@ -36,7 +36,7 @@ export default function PitstopPage() {
           <div className="w-8 h-8 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-white transition-transform group-hover:-translate-x-1">
             <ArrowRight className="w-4 h-4 rotate-180" />
           </div>
-          <span className="text-sm font-bold tracking-widest uppercase text-slate-300 font-mono">Back to FORGELAB</span>
+          <span className="text-sm font-bold tracking-widest uppercase text-slate-300 font-mono">Back to portfolio</span>
         </Link>
         <span className="flex items-center gap-2.5">
           <span className="w-2.5 h-2.5 rounded-full ember-bead bg-gradient-to-br from-amber-300 via-orange-500 to-rose-500" />
@@ -357,7 +357,7 @@ export default function PitstopPage() {
           </Link>
           <p className="mt-12 text-sm font-mono font-bold tracking-widest uppercase text-slate-500 flex items-center justify-center gap-2.5">
             <span className="w-2 h-2 rounded-full ember-bead bg-gradient-to-br from-amber-300 via-orange-500 to-rose-500" />
-            Forged by FORGELAB°
+            Built by Abhinav Sen
           </p>
         </div>
       </section>

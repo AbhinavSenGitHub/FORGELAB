@@ -76,15 +76,14 @@ export async function POST(request: Request) {
   // already succeeded, so a failed acknowledgement must not fail the request.
   try {
     await transporter.sendMail({
-      from: `"FORGELAB" <${user}>`,
+      from: `"Abhinav Sen" <${user}>`,
       to: email,
-      subject: "Thanks for reaching out to FORGELAB°",
+      subject: "Thanks for reaching out — Abhinav Sen",
       text:
         `Hi ${name},\n\n` +
-        `Thanks for reaching out to FORGELAB. We've received your message and ` +
-        `our team will connect with you soon.\n\n` +
-        `In the meantime, we're already firing up the forge.\n\n` +
-        `— Team FORGELAB\nWe forge premium digital experiences.`,
+        `Thanks for reaching out. I've received your message and ` +
+        `I'll get back to you soon.\n\n` +
+        `— Abhinav Sen\nabhinavsen.com`,
       html: buildAutoReply(name),
     });
   } catch (err) {
@@ -94,7 +93,7 @@ export async function POST(request: Request) {
   return NextResponse.json({ ok: true });
 }
 
-// FORGELAB-themed acknowledgement email. Table + inline styles for email-client
+// Acknowledgement email in the portfolio's style. Table + inline styles for email-client
 // compatibility; dark luxe palette with the ember accent.
 function buildAutoReply(name: string) {
   const safeName = escapeHtml(name);
@@ -121,7 +120,7 @@ function buildAutoReply(name: string) {
                       <div style="width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,#ffb347,#ff3d77);box-shadow:0 0 12px rgba(255,106,61,0.8);"></div>
                     </td>
                     <td>
-                      <span style="font-size:22px;font-weight:700;letter-spacing:-0.5px;color:#ffffff;">FORGE<span style="color:#ff6a3d;">LAB</span><sup style="color:#ff6a3d;font-size:11px;">&deg;</sup></span>
+                      <span style="font-size:22px;font-weight:700;letter-spacing:-0.5px;color:#ffffff;">Abhinav<span style="color:#ff6a3d;"> Sen</span></span>
                     </td>
                   </tr>
                 </table>
@@ -135,12 +134,12 @@ function buildAutoReply(name: string) {
                   Thanks for reaching out, ${safeName}.
                 </h1>
                 <p style="margin:0 0 16px 0;font-size:16px;line-height:1.65;color:#94a3b8;">
-                  We've received your message and it's landed straight with our team.
-                  <strong style="color:#e2e8f0;">We'll connect with you soon.</strong>
+                  I've received your message and it's landed straight in my inbox.
+                  <strong style="color:#e2e8f0;">I'll get back to you soon.</strong>
                 </p>
                 <p style="margin:0 0 28px 0;font-size:16px;line-height:1.65;color:#94a3b8;">
-                  In the meantime, we're already firing up the forge — premium web,
-                  mobile, desktop &amp; AI products, engineered for scale.
+                  In the meantime, take a look at WorkOS, the desktop app I'm building:
+                  <a href="https://www.abhinavsen.com/workos" style="color:#ff6a3d;">abhinavsen.com/workos</a>.
                 </p>
               </td>
             </tr>
@@ -155,16 +154,16 @@ function buildAutoReply(name: string) {
             <!-- footer -->
             <tr>
               <td style="padding:24px 40px 36px 40px;">
-                <p style="margin:0 0 4px 0;font-size:14px;font-weight:700;color:#ffffff;">Team FORGELAB</p>
+                <p style="margin:0 0 4px 0;font-size:14px;font-weight:700;color:#ffffff;">Abhinav Sen</p>
                 <p style="margin:0;font-size:13px;line-height:1.6;color:#64748b;">
-                  We forge premium digital experiences.
+                  Full-stack developer · abhinavsen.com
                 </p>
               </td>
             </tr>
 
           </table>
           <p style="max-width:560px;margin:18px auto 0 auto;font-size:11px;color:#475569;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;text-align:center;">
-            This is an automated acknowledgement from FORGELAB. No need to reply.
+            This is an automated acknowledgement from abhinavsen.com. No need to reply.
           </p>
         </td>
       </tr>
