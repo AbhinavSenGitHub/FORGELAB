@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { SITE_URL, SITE_NAME, PROJECTS_SEO } from "./seo.config";
 
@@ -122,6 +123,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
+        {/* Vercel Web Analytics: cookieless visit counts (Vercel → forgelab → Analytics). */}
+        <Analytics />
       </body>
     </html>
   );
